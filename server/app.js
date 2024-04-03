@@ -6,6 +6,7 @@ require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 const db_user = process.env.DB_USER;
 const db_password = process.env.DB_PASSWORD;
+const rotaBibliotecas = require('./routes/bibliotecas');
 
 //config
     //body-parser
@@ -21,6 +22,8 @@ const db_password = process.env.DB_PASSWORD;
 
 
 //rotas
+app.use("/bibliotecas", rotaBibliotecas);
+
 app.get('/', (req,res) => {
     res.send("Ola mundo");
 })
