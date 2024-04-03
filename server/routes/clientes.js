@@ -62,4 +62,28 @@ router.post('/', verificaToken, (req,res) => {
     })
 })
 
+router.get("/", verificaToken, (req,res) => {
+    const user = req.user;
+
+    Cliente.find({idBiblioteca: user._id}).populate("idBiblioteca").then((clientes) => {
+        return res.status(200).json(clientes);
+    }).catch((erro) => {
+        return res.status(500).json({errorMessage: "Erro interno no servidor, erro: "+erro});
+    })
+})
+
+router.delete('/:id', verificaToken, (req,res) => {
+    const user = req.user;
+
+    Cliente.findOneAndDelete({idBiblioteca: user._id, _id: req.params.id}).then((clienteRemovido) => {
+        if(!clienteRemovido) {
+            return res.status(404).json({message: "Erro ao encontrar cliente a ser deletado"});
+        }
+
+        return res.status(200).json({message: "Cliente deletado com sucesso!!!", clienteRemovido:clienteRemovido});
+    }).catch((erro) => {
+        return res.status(500).json({errorMessage: "Erro interno no servidor, erro: "+erro});
+    })
+})
+
 module.exports = router;
