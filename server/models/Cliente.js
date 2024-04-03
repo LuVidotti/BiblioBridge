@@ -31,6 +31,10 @@ const Cliente = new Schema({
     cpf: {
         type: String,
         required: true
+    },
+    idBiblioteca: {
+        type: Schema.Types.ObjectId,
+        ref: "bibliotecas"
     }
 });
 

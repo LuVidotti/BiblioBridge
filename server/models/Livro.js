@@ -21,6 +21,10 @@ const Livro = new Schema({
     quantidade: {
         type: Number,
         required: true
+    },
+    idBiblioteca: {
+        type: Schema.Types.ObjectId,
+        ref: "bibliotecas"
     }
 })
 

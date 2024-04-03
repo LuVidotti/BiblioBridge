@@ -21,6 +21,10 @@ const Emprestimo = new Schema({
     },
     dataDevolucao: {
         type: Date
+    },
+    idBiblioteca: {
+        type: Schema.Types.ObjectId,
+        ref: "bibliotecas"
     }
 })
 
