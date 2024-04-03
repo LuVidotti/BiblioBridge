@@ -7,6 +7,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require("dotenv").config();
 const SECRET = process.env.SECRET;
+const verificaToken = require('../Auth/auth');
 
 router.post('/', (req,res) => {
     if(!req.body.nome || typeof req.body.nome === undefined || req.body.nome === null) {
@@ -77,6 +78,16 @@ router.post('/login', (req,res) => {
         }).catch((erro) => {
             return res.status(500).json({errorMessage: "Erro interno no servidor, erro: "+erro});
         }) 
+    }).catch((erro) => {
+        return res.status(500).json({errorMessage: "Erro interno no servidor, erro: "+erro});
+    })
+})
+
+router.get('/perfil', verificaToken, (req,res) => {
+    const user = req.user;
+
+    Biblioteca.findOne({_id: user._id}).then((biblioteca) => {
+        return res.status(200).json(biblioteca);
     }).catch((erro) => {
         return res.status(500).json({errorMessage: "Erro interno no servidor, erro: "+erro});
     })
