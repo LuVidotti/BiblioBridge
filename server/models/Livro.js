@@ -15,7 +15,7 @@ const Livro = new Schema({
         required: true
     },
     dataPublicacao: {
-        type: String,
+        type: Date,
         required: true
     },
     quantidade: {

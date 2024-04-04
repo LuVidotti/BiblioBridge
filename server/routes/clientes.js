@@ -36,7 +36,7 @@ router.post('/', verificaToken, (req,res) => {
         return res.status(400).json({message: "Erro, cpf invalido"});
     }
 
-    Cliente.findOne({cpf: req.body.cpf}).then((cliente) => {
+    Cliente.findOne({cpf: req.body.cpf, idBiblioteca: user._id}).then((cliente) => {
         if(cliente) {
             return res.status(400).json({message: "Ja existe um cliente cadastrado neste cpf"});
         }
@@ -130,7 +130,7 @@ router.put("/:id", verificaToken, (req,res) => {
         cliente.endereco.numero = req.body.numero;
         cliente.cpf = req.body.cpf;
 
-        Cliente.findOne({cpf: cliente.cpf, _id: {$ne: cliente._id}}).then((clienteEditado) => {
+        Cliente.findOne({cpf: cliente.cpf, _id: {$ne: cliente._id}, idBiblioteca: user._id}).then((clienteEditado) => {
             if(clienteEditado) {
                 return res.status(400).json({message: "Ja existe um cliente cadastrado neste cpf"});
             }
