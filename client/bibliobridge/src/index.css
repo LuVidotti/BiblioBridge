@@ -1,0 +1,16 @@
+:root {
+  --preto: #030637;
+  --roxo-escuro: #3C0753;
+  --roxo-claro: #720455;
+  --rosa: #910A67;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
