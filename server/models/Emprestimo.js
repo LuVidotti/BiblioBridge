@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Emprestimo = new Schema({
-    IdCliente: {
+    idCliente: {
         type: Schema.Types.ObjectId,
         ref: "clientes"
     },
@@ -21,6 +21,10 @@ const Emprestimo = new Schema({
     },
     dataDevolucao: {
         type: Date
+    },
+    dataDevolucaoPrevista: {
+        type: Date,
+        required: true
     },
     idBiblioteca: {
         type: Schema.Types.ObjectId,

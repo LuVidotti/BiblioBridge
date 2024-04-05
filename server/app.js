@@ -9,6 +9,7 @@ const db_password = process.env.DB_PASSWORD;
 const rotaBibliotecas = require('./routes/bibliotecas');
 const rotaClientes = require('./routes/clientes');
 const rotaLivros = require('./routes/livros');
+const rotaEmprestimos = require('./routes/emprestimos');
 
 //config
     //body-parser
@@ -27,6 +28,7 @@ const rotaLivros = require('./routes/livros');
 app.use("/bibliotecas", rotaBibliotecas);
 app.use("/clientes", rotaClientes);
 app.use("/livros", rotaLivros);
+app.use("/emprestimos", rotaEmprestimos);
 
 app.get('/', (req,res) => {
     res.send("Ola mundo");
