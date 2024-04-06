@@ -1,0 +1,11 @@
+.sobre {
+    margin: 6em 0 0 10em;
+}
+
+.sobre p {
+    color: #FFFFFF;
+    width: 70vw;
+    font-family: 'Quattrocento', serif;
+    font-size: 20px;
+    font-weight: 400;
+}

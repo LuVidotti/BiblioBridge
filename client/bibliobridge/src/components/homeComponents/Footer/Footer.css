@@ -1,0 +1,23 @@
+.home-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4em;
+    border-top: 1px solid #FFFFFF;
+    padding: 2em;
+    align-items: center;
+}
+
+.home-footer img {
+    width: 50px;
+    cursor: pointer;
+}
+
+.home-footer div {
+    display: flex;
+    gap: 1em;
+}
+
+.home-footer div a {
+    color: #FFFFFF;
+    font-size: 26px;
+}

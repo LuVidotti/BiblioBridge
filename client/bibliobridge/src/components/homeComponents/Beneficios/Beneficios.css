@@ -1,0 +1,36 @@
+.beneficios {
+    margin-top: 6em;
+    font-family: 'Quattrocento', serif;
+}
+
+.titulo-container {
+    display: grid;
+    place-items: center;
+}
+
+.beneficio {
+    display: flex;
+    align-items: center;
+    margin: 6em 0;
+    gap: 5em;
+}
+
+.beneficio-container {
+    display: grid;
+    place-items: center;
+}
+
+.beneficio img {
+    width: 300px;
+}
+
+.beneficio--info h2 {
+    color: var(--roxo-claro);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.beneficio--info p {
+    color: #FFFFFF;
+    width: 500px;
+}

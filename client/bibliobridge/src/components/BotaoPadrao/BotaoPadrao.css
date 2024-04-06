@@ -1,0 +1,19 @@
+.botao-padrao {
+    background-color: transparent;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    padding: 10px 30px;
+    border: 2px solid var(--roxo-claro);
+    border-radius: 5px;
+    font-size: 18px;
+    box-sizing: border-box;
+    transition: all 0.25s;
+    box-shadow: 4px 4px 17px 4px rgb(0, 0, 0, 0.25);
+}
+
+.botao-padrao:hover {
+    cursor: pointer;
+    background-color: var(--roxo-claro);
+    box-shadow: none;
+}
